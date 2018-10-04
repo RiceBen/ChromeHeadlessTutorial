@@ -1,0 +1,16 @@
+{
+  "name": "chromeheadlesstutorial",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "azure-storage": "^2.10.1",
+    "puppeteer": "^1.8.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "benjamin <benjamin750715@gmail.com>",
+  "license": "ISC"
+}

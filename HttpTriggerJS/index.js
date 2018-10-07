@@ -1,16 +1,31 @@
 module.exports = async function (context, req) {
-    context.log('JavaScript HTTP trigger function processed a request.');
+    if (process.env.NODE_ENV !== 'production') {
+        require('dotenv').load();
+    }
 
-    if (req.query.name || (req.body && req.body.name)) {
-        context.res = {
-            // status: 200, /* Defaults to 200 */
-            body: "Hello " + (req.query.name || req.body.name)
-        };
-    }
-    else {
-        context.res = {
-            status: 400,
-            body: "Please pass a name on the query string or in the request body"
-        };
-    }
+    const puppeteer = require('puppeteer');
+    const screenshotStorage = require('./screenshotStorage.js');
+    
+    await screenshotStorage.initContainer();
+    
+    let salePage = req.body.salepage_url;
+    let shoppingcarId = req.body.shoppingcar_id;
+    let fileName = shoppingcarId + '.png';
+
+    (async() => {
+        const browser = await puppeteer.launch();
+        const page = await browser.newPage();
+        page.setUserAgent("Mozilla/5.0 (iPhone; CPU iPhone OS 11_0 like Mac OS X) AppleWebKit/604.1.38 (KHTML, like Gecko) Version/11.0 Mobile/15A372 Safari/604.1");
+        
+        await page.goto(salePage);
+        await page.screenshot({
+            type: 'png',
+            path: fileName,
+            fullPage: true
+        });
+        
+        screenshotStorage.uploadLocalFile(fileName);
+
+        await browser.close();
+      })();
 };

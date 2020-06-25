@@ -6,7 +6,7 @@
   "dependencies": {
     "azure-storage": "^2.10.3",
     "dotenv": "^6.0.0",
-    "locate-path": "^3.0.0",
+    "locate-path": "^5.0.0",
     "path": "^0.12.7",
     "path-exists": "^3.0.0",
     "puppeteer": "^1.20.0"

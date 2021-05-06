@@ -5,7 +5,7 @@
   "main": "index.js",
   "dependencies": {
     "azure-storage": "^2.10.3",
-    "dotenv": "^8.4.0",
+    "dotenv": "^9.0.0",
     "locate-path": "^6.0.0",
     "path": "^0.12.7",
     "path-exists": "^4.0.0",

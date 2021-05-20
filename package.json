@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "dependencies": {
-    "azure-storage": "^2.10.3",
+    "azure-storage": "^2.10.4",
     "dotenv": "^9.0.2",
     "locate-path": "^6.0.0",
     "path": "^0.12.7",

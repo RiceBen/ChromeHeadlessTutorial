@@ -9,7 +9,7 @@
     "locate-path": "^7.1.1",
     "path": "^0.12.7",
     "path-exists": "^5.0.0",
-    "puppeteer": "^18.2.0"
+    "puppeteer": "^18.2.1"
   },
   "devDependencies": {},
   "scripts": {
